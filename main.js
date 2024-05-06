@@ -2,7 +2,6 @@ $(document).ready(function() {
     const GameViewport = {
         WIDTH: 384,
         HEIGHT: 224,
-        SCALE: 4,
     };
 
     const canvasEl = $('canvas'); 
@@ -12,8 +11,7 @@ $(document).ready(function() {
     canvasDomEl.width = GameViewport.WIDTH;
     canvasDomEl.height = GameViewport.HEIGHT;
 
-    canvasEl.css('width', `${GameViewport.WIDTH * GameViewport.SCALE}px`);
-    canvasEl.css('height', `${GameViewport.HEIGHT * GameViewport.SCALE}px`);
+    const jin = $('img');
 
     context.strokeStyle = 'yellow';
     context.moveTo(0, 0);
@@ -21,6 +19,8 @@ $(document).ready(function() {
     context.moveTo(GameViewport.WIDTH, 0);
     context.lineTo(0, GameViewport.HEIGHT);
     context.stroke();
+
+    context.drawImage(jin[0], 0, 0);
 
     console.log(context);
 });
