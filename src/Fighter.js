@@ -6,8 +6,8 @@ class Fighter {
         this.velocity = velocity;
     }
 
-    updatePosition(GameViewport) {
-        this.position.x += this.velocity;
+    updatePosition(secondsPassed, GameViewport) {
+        this.position.x += this.velocity * secondsPassed;
 
         if (this.position.x > GameViewport.WIDTH - this.image.width || this.position.x < 0) {
             this.velocity *= -1;
